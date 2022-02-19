@@ -13,6 +13,7 @@ class showbarchart {
             margin: _config.margin || { top: 25, right: 30, bottom: 30, left: 50 }
         }
         this.data = _data;
+	this.data = this.data[this.data.length -1];
         this.initVis();
     }
     
