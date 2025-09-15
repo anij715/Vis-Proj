@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D3 Project 3</title>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<h1>Project 3</h1>
+
+<style>
+    svg {
+        width: 100%;
+        height: 100%;
+        position: center;
+    }
+</style>
+
+<body>
+
+    <!-- <p><a href="http://localhost:8000/Desktop/Proejct%203%20backup/index1.html">Link to barchart and character links.</a></p> -->
+    <h1>Word Cloud</h1>
+    <div class="control-bar">
+        Select a Character <select id="character-selection-cloud">
+            <option value="Michael">Michael</option>
+            <option value="Dwight">Dwight</option>
+            <option value="Pam">Pam</option>
+            <option value="Jim">Jim</option>
+            <option value="Andy">Andy</option>
+            <option value="Jan">Jan</option>
+            <option value="Erin">Erin</option>
+            <option value="Kevin">Kevin</option>
+            <option value="Angela">Angela</option>
+            <option value="Toby">Toby</option>
+            <option value="Cathy">Cathy</option>
+            <option value="Ryan">Ryan</option>
+            <option value="Holly">Holly</option>
+            <option value="David">David</option>
+            <option value="Stanley">Stanley</option>
+            <option value="Robert">Robert</option>
+            <option value="Kelly">Kelly</option>
+            <option value="Gabe">Gabe</option>
+            <option value="Karen">Karen</option>
+            <option value="Meredith">Meredith</option>
+            <option value="Darryl">Darryl</option>
+            <option value="Nellie">Nellie</option>
+            <option value="Mose">Mose</option>
+            <option value="Roy">Roy</option>
+            <option value="Deangelo">Deangelo</option>
+            <option value="Charles">Charles</option>
+            <option value="Oscar">Oscar</option>
+            <option value="Pete">Pete</option>
+            <option value="Nate">Nate</option>
+            <option value="Phyllis">Phyllis</option>
+            <option value="Jo">Jo</option>
+            <option value="Josh">Josh</option>
+            <option value="Clark">Clark</option>
+            <option value="Todd Packer">Todd Packer</option>
+            <option value="Hank">Hank</option>
+            <option value="Creed">Creed</option>
+            <option value="Sam">Sam</option>
+            <option value="Tony">Tony</option>
+            <option value="David">David</option>
+            <option value="Brian">Brian</option>
+            <option value="Katy">Katy</option>
+        </select>
+    </div>
+
+    <div>
+        Season: <input type="number" value="1" min="1" max="9" id="season-selection-cloud">
+    </div>
+    <br>
+
+
+    <br>
+    <div>
+        <h8><svg id="cloud" width="960" height="500"></svg></h8>
+    </div>
+    <br>
+
+
+    <h1>Linechart that displays number of episodes a character showed up in a season</h1>
+
+    <div class="control-bar">
+        Select a Character <select id="character-selection1">
+            <option value="Michael">Michael</option>
+            <option value="Dwight">Dwight</option>
+            <option value="Pam">Pam</option>
+            <option value="Jim">Jim</option>
+            <option value="Andy">Andy</option>
+            <option value="Jan">Jan</option>
+            <option value="Erin">Erin</option>
+            <option value="Kevin">Kevin</option>
+            <option value="Angela">Angela</option>
+            <option value="Toby">Toby</option>
+            <option value="Cathy">Cathy</option>
+            <option value="Ryan">Ryan</option>
+            <option value="Holly">Holly</option>
+            <option value="David">David</option>
+            <option value="Stanley">Stanley</option>
+            <option value="Robert">Robert</option>
+            <option value="Kelly">Kelly</option>
+            <option value="Gabe">Gabe</option>
+            <option value="Karen">Karen</option>
+            <option value="Meredith">Meredith</option>
+            <option value="Darryl">Darryl</option>
+            <option value="Nellie">Nellie</option>
+            <option value="Mose">Mose</option>
+            <option value="Roy">Roy</option>
+            <option value="Deangelo">Deangelo</option>
+            <option value="Charles">Charles</option>
+            <option value="Oscar">Oscar</option>
+            <option value="Pete">Pete</option>
+            <option value="Nate">Nate</option>
+            <option value="Phyllis">Phyllis</option>
+            <option value="Jo">Jo</option>
+            <option value="Josh">Josh</option>
+            <option value="Clark">Clark</option>
+            <option value="Todd Packer">Todd Packer</option>
+            <option value="Hank">Hank</option>
+            <option value="Creed">Creed</option>
+            <option value="Sam">Sam</option>
+            <option value="Tony">Tony</option>
+            <option value="David">David</option>
+            <option value="Brian">Brian</option>
+            <option value="Katy">Katy</option>
+        </select>
+    </div>
+
+    <br>
+    <div><svg id="linechart1"></svg></div>
+    <br>
+
+    <h1>Barchart to display who spoke how many words.</h1>
+
+    <div>
+        Season: <input type="number" value="1" min="1" max="9" id="season-selection">
+    </div>
+
+    <br>
+    <div>
+        <h7><svg id="barchart"></svg></h7>
+    </div>
+    <br>
+
+    <h1>Got the cord to display top 4 people who talk to each other the most.</h1>
+    <div id="chord"></div>
+
+
+    <h1>Linechart and table to display number of words spoken in a season per character.</h1>
+    <div class="control-bar">
+        Select a Character <select id="character-selection">
+            <option value="Michael">Michael</option>
+            <option value="Dwight">Dwight</option>
+            <option value="Pam">Pam</option>
+            <option value="Jim">Jim</option>
+            <option value="Andy">Andy</option>
+            <option value="Jan">Jan</option>
+            <option value="Erin">Erin</option>
+            <option value="Kevin">Kevin</option>
+            <option value="Angela">Angela</option>
+            <option value="Toby">Toby</option>
+            <option value="Cathy">Cathy</option>
+            <option value="Ryan">Ryan</option>
+            <option value="Holly">Holly</option>
+            <option value="David">David</option>
+            <option value="Stanley">Stanley</option>
+            <option value="Robert">Robert</option>
+            <option value="Kelly">Kelly</option>
+            <option value="Gabe">Gabe</option>
+            <option value="Karen">Karen</option>
+            <option value="Meredith">Meredith</option>
+            <option value="Darryl">Darryl</option>
+            <option value="Nellie">Nellie</option>
+            <option value="Mose">Mose</option>
+            <option value="Roy">Roy</option>
+            <option value="Deangelo">Deangelo</option>
+            <option value="Charles">Charles</option>
+            <option value="Oscar">Oscar</option>
+            <option value="Pete">Pete</option>
+            <option value="Nate">Nate</option>
+            <option value="Phyllis">Phyllis</option>
+            <option value="Jo">Jo</option>
+            <option value="Josh">Josh</option>
+            <option value="Clark">Clark</option>
+            <option value="Todd Packer">Todd Packer</option>
+            <option value="Hank">Hank</option>
+            <option value="Creed">Creed</option>
+            <option value="Sam">Sam</option>
+            <option value="Tony">Tony</option>
+            <option value="David">David</option>
+            <option value="Brian">Brian</option>
+            <option value="Katy">Katy</option>
+
+        </select>
+    </div>
+
+    <br>
+    <div><svg id="linechart"></svg></div>
+    <br>
+
+
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/d3.v6.min.js"></script>
+
+    <script src="js/cloud.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bar.js"></script>
+    <script src="js/chord.js"></script>
+    <script src="js/linechart.js"></script>
+    <script src="js/linechart1.js"></script>
+</body>
+
+</html>
